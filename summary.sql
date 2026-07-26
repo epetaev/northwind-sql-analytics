@@ -106,3 +106,10 @@ FROM orders
 GROUP BY seller_id
 HAVING COUNT(*) >= 3;
 --Результат: останется только продавец 300 (у него 3 заказа), продавцы 100 и 200 отсеются — потому что HAVING проверяет количество заказов уже после группировки.
+
+-- UNION & UNION ALL - same number of columns in both queries
+SELECT country
+FROM customers
+UNION
+SELECT country
+FROM employees
